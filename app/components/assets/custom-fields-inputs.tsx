@@ -64,8 +64,10 @@ export default function AssetCustomFields({
       <Popover>
         <PopoverTrigger asChild>
           <Button
+            error={zo.errors[`cf-${field.id}`]()?.message}
+            variant="secondary"
             className={tw(
-              "w-[290px] pl-1 text-left font-normal",
+              "w-full min-w-[300px] pl-1 text-left font-normal",
               !dateObj[field.id] && "text-muted-foreground"
             )}
           >
